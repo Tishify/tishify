@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
           </div>
         </div>
         <div className="landing-center">
-          <img src={logo} className="landing-logo" alt="Tishify logo" />
           <div className="landing-title">Tishify</div>
           <div className="landing-subtitle">Your partner in digital simplification</div>
           <div className="landing-contact">
