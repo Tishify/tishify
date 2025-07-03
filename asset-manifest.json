@@ -1,15 +1,16 @@
 {
   "files": {
     "main.css": "/tishify/static/css/main.33ce0a6d.css",
-    "main.js": "/tishify/static/js/main.c61bcc04.js",
+    "main.js": "/tishify/static/js/main.ba9358c8.js",
     "static/js/453.ff957f50.chunk.js": "/tishify/static/js/453.ff957f50.chunk.js",
+    "static/media/logo.png": "/tishify/static/media/logo.99edced08e9dcec76e11.png",
     "index.html": "/tishify/index.html",
     "main.33ce0a6d.css.map": "/tishify/static/css/main.33ce0a6d.css.map",
-    "main.c61bcc04.js.map": "/tishify/static/js/main.c61bcc04.js.map",
+    "main.ba9358c8.js.map": "/tishify/static/js/main.ba9358c8.js.map",
     "453.ff957f50.chunk.js.map": "/tishify/static/js/453.ff957f50.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.33ce0a6d.css",
-    "static/js/main.c61bcc04.js"
+    "static/js/main.ba9358c8.js"
   ]
 }
