@@ -94,9 +94,9 @@ function App() {
                 <img src={process.env.PUBLIC_URL + '/mykyta-photo.jpg'} alt="Mykyta Tishkin" />
               </div>
               <h3>Mykyta Tishkin</h3>
-              <p className="member-role">CEO & Head</p>
+              <p className="member-role">CEO & Head of Operations</p>
               <p className="member-description">
-                Leading Tishify's vision and strategy to simplify technology for businesses worldwide.
+                Overseeing all company operations and ensuring Tishify runs smoothly, from strategy to execution.
               </p>
               <div className="member-links">
                 <a href="https://github.com/mykytatishkin" target="_blank" rel="noopener noreferrer" className="social-link">
