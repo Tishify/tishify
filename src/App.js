@@ -255,7 +255,7 @@ function App() {
         <div className="contact-content">
           <div className="contact-stats">
             <div className="stat-item">
-              <div className="stat-number">1</div>
+              <div className="stat-number">2</div>
               <div className="stat-label">Own Services</div>
             </div>
             <div className="stat-item">
