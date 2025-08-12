@@ -3,6 +3,7 @@ import './App.css';
 
 function App() {
   const [parallax, setParallax] = useState(0);
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,8 +14,44 @@ function App() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [isMenuOpen]);
+
+  const closeMenu = () => {
+    setIsMenuOpen(false);
+  };
+
+  const scrollToSection = (sectionId) => {
+    const element = document.getElementById(sectionId);
+    if (element) {
+      element.scrollIntoView({ 
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+    closeMenu();
+  };
+
+
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <div className="landing-root">
+      {/* Blur Overlay */}
+      <div className={`blur-overlay ${isMenuOpen ? 'active' : ''}`}></div>
+      
       {/* Header */}
       <header className="header">
         <div className="header-content">
@@ -22,11 +59,35 @@ function App() {
             <span className="logo-line">TISHIFY</span>
             <span className="logo-line">DIGITAL SIMPLIFICATION</span>
           </div>
-          <nav className="nav">
-            <a href="#contacts" className="nav-link">CONTACTS</a>
+          
+          {/* Desktop Navigation */}
+          <nav className="nav desktop-nav">
+            <a href="#services" className="nav-link" onClick={() => scrollToSection('services')}>SERVICES</a>
+            <a href="#team" className="nav-link" onClick={() => scrollToSection('team')}>TEAM</a>
+            <a href="#contacts" className="nav-link" onClick={() => scrollToSection('contacts')}>CONTACTS</a>
           </nav>
-          <div className="phone">@tishify</div>
+
+          <div className="header-right">
+            <div className="phone desktop-phone">@tishify</div>
+            
+            {/* Mobile Menu Button */}
+            <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
+              <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+              <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+              <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
+            </button>
+          </div>
         </div>
+
+        {/* Mobile Navigation */}
+        <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
+          <div className="mobile-nav-content">
+            <a href="#services" className="mobile-nav-link" onClick={() => scrollToSection('services')}>SERVICES</a>
+            <a href="#team" className="mobile-nav-link" onClick={() => scrollToSection('team')}>TEAM</a>
+            <a href="#contacts" className="mobile-nav-link" onClick={() => scrollToSection('contacts')}>CONTACTS</a>
+            <div className="mobile-phone">@tishify</div>
+          </div>
+        </nav>
       </header>
 
      
