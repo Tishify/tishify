@@ -29,41 +29,20 @@ function App() {
         </div>
       </header>
 
-      {/* Main Landing Section */}
-      <div className="landing-main">
-        <div className="landing-left">
-          <div
-            className="landing-left-inner"
-            style={{
-              transform: `translateY(${parallax * 0.5}px)`,
-              transition: 'transform 0.1s',
-            }}
-          >
-            <div className="landing-big">We</div>
-            <div className="landing-big">Simplify.</div>
-          </div>
+     
+
+      {/* Interactive Spline Section */}
+      <section className="spline-section">
+        <div className="spline-container">
+          <iframe 
+            src='https://my.spline.design/r4xbot-fJUhSRudBOZaQT2M86N5BFNj/' 
+            frameBorder='0' 
+            width='100%' 
+            height='100%'
+            title="Tishify Interactive Design"
+          ></iframe>
         </div>
-        <div className="landing-center">
-          <div className="landing-title">Tishify</div>
-          <div className="landing-subtitle">Your partner in digital simplification</div>
-          <div className="landing-contact">
-            <a href="#team" className="landing-btn">Meet Our Team</a>
-            <a href="#contact" className="landing-btn">Contact Us</a>
-          </div>
-        </div>
-        <div className="landing-right landing-right-parallax">
-          <div
-            className="yougrow-parallax-bg"
-            style={{
-              transform: `translateY(${-parallax * 0.5}px)`,
-              transition: 'transform 0.1s',
-            }}
-          >
-            <div className="landing-big yougrow-text">You</div>
-            <div className="landing-big yougrow-text">Grow.</div>
-          </div>
-        </div>
-      </div>
+      </section>
 
       {/* Services Section */}
       <section className="services-section" id="services">
