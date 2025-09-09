@@ -63,7 +63,10 @@ function App() {
           {/* Desktop Navigation */}
           <nav className="nav desktop-nav">
             <a href="#services" className="nav-link" onClick={() => scrollToSection('services')}>SERVICES</a>
+            <a href="#software" className="nav-link" onClick={() => scrollToSection('software')}>SOFTWARE</a>
+            <a href="#about" className="nav-link" onClick={() => scrollToSection('about')}>ABOUT</a>
             <a href="#team" className="nav-link" onClick={() => scrollToSection('team')}>TEAM</a>
+            <a href="#contact" className="nav-link" onClick={() => scrollToSection('contact')}>GET IN TOUCH</a>
             <a href="#contacts" className="nav-link" onClick={() => scrollToSection('contacts')}>CONTACTS</a>
           </nav>
 
@@ -83,7 +86,10 @@ function App() {
         <nav className={`mobile-nav ${isMenuOpen ? 'open' : ''}`}>
           <div className="mobile-nav-content">
             <a href="#services" className="mobile-nav-link" onClick={() => scrollToSection('services')}>SERVICES</a>
+            <a href="#software" className="mobile-nav-link" onClick={() => scrollToSection('software')}>SOFTWARE</a>
+            <a href="#about" className="mobile-nav-link" onClick={() => scrollToSection('about')}>ABOUT</a>
             <a href="#team" className="mobile-nav-link" onClick={() => scrollToSection('team')}>TEAM</a>
+            <a href="#contact" className="mobile-nav-link" onClick={() => scrollToSection('contact')}>GET IN TOUCH</a>
             <a href="#contacts" className="mobile-nav-link" onClick={() => scrollToSection('contacts')}>CONTACTS</a>
             <div className="mobile-phone">@tishify</div>
           </div>
@@ -167,7 +173,7 @@ function App() {
       </section>
 
       {/* Software Development Section */}
-      <section className="software-section">
+      <section className="software-section" id="software">
         <div className="software-content">
           <div className="software-left">
             <div className="diagram-container">
@@ -207,7 +213,7 @@ function App() {
       </section>
 
       {/* About Section */}
-      <section className="section about-section">
+      <section className="section about-section" id="about">
         <div className="section-content">
           <h2>About Us</h2>
           <p>
@@ -231,7 +237,7 @@ function App() {
       </section>
 
       {/* Call to Action Section */}
-      <section className="section cta-section">
+      <section className="section cta-section" id="contact">
         <div className="section-content">
           <h2>Ready to Simplify Your Business?</h2>
           <div className="cta-spacing"></div>
