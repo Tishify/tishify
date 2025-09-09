@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/tishify/static/css/main.23566c29.css",
+    "main.js": "/tishify/static/js/main.ae18adce.js",
+    "static/js/453.ff957f50.chunk.js": "/tishify/static/js/453.ff957f50.chunk.js",
+    "index.html": "/tishify/index.html",
+    "main.23566c29.css.map": "/tishify/static/css/main.23566c29.css.map",
+    "main.ae18adce.js.map": "/tishify/static/js/main.ae18adce.js.map",
+    "453.ff957f50.chunk.js.map": "/tishify/static/js/453.ff957f50.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.23566c29.css",
+    "static/js/main.ae18adce.js"
+  ]
+}
