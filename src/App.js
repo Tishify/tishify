@@ -160,23 +160,10 @@ function LandingPage() {
             <p className="services-description">
               From ecommerce support to recruiting and uptime monitoring, our bots are battle-tested across fast-moving sales, HR, and operations teams.
             </p>
-            <ul className="services-pill-list">
-              <li className="services-pill">
-                <span className="services-pill-title">Commerce Command Hub</span>
-                <span className="services-pill-copy">Synchronizes storefront tasks, order updates, and manager alerts in real time.</span>
-              </li>
-              <li className="services-pill">
-                <span className="services-pill-title">Candidate Care Autopilot</span>
-                <span className="services-pill-copy">Keeps recruiting pipelines warm with intelligent vacancy and weekend responses.</span>
-              </li>
-              <li className="services-pill">
-                <span className="services-pill-title">SecureSpeak & ShiftSync</span>
-                <span className="services-pill-copy">Moderates communities, orchestrates schedules, and keeps operations humming 24/7.</span>
-              </li>
-              <li className="services-pill">
-                <span className="services-pill-title">SaaS Stability Watchtower</span>
-                <span className="services-pill-copy">Watches over mission-critical services and triggers rapid incident response.</span>
-              </li>
+            <ul className="services-bullets">
+              <li>Design and launch Telegram bots tailored to your customer and internal workflows.</li>
+              <li>Integrate automations with the systems you already rely on-CRMs, calendars, analytics, and more.</li>
+              <li>Roll out compliant, secure flows quickly using our reusable components and governance playbooks.</li>
             </ul>
             <div className="services-metrics">
               <div className="services-metric">
@@ -185,7 +172,7 @@ function LandingPage() {
               </div>
               <div className="services-metric">
                 <span className="services-metric-value">5+</span>
-                <span className="services-metric-label">Ready-to-launch suites</span>
+                <span className="services-metric-label">Messenger integrations</span>
               </div>
               <div className="services-metric">
                 <span className="services-metric-value">2x</span>
