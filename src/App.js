@@ -194,38 +194,53 @@ function LandingPage() {
       <section className="software-section" id="software">
         <div className="software-content">
           <div className="software-left">
-            <div className="diagram-container">
-              <div className="diagram">
-                <div className="diagram-node project">PROJECT</div>
-                <div className="diagram-level">
-                  <div className="diagram-node">TECHNOLOGY</div>
-                  <div className="diagram-node">INVESTMENTS</div>
-                  <div className="diagram-node">MARKETING</div>
-                </div>
-                <div className="diagram-level">
-                  <div className="diagram-node">FRONTEND</div>
-                  <div className="diagram-node">BACKEND</div>
-                  <div className="diagram-node">STRATEGY</div>
-                </div>
-                <div className="diagram-level">
-                  <div className="diagram-node">JAVA</div>
-                  <div className="diagram-node">DOCKER</div>
-                </div>
-
+            <div className="software-grid">
+              <div className="software-card software-card--primary">
+                <span className="software-card-label">Phase 1</span>
+                <h4>Discovery Blueprint</h4>
+                <p>Workshops, product vision, UX prototypes, and delivery plans aligned with stakeholders.</p>
+              </div>
+              <div className="software-card">
+                <span className="software-card-label">Phase 2</span>
+                <h4>Build & Integrate</h4>
+                <p>Full-stack squads delivering incremental releases, integrations, and automated QA.</p>
+              </div>
+              <div className="software-card">
+                <span className="software-card-label">Phase 3</span>
+                <h4>Scale & Support</h4>
+                <p>Monitoring, SRE playbooks, analytics, and ongoing optimisation for high-load applications.</p>
               </div>
             </div>
           </div>
           <div className="software-right">
-            <h2 className="software-title">Custom Software Development</h2>
+            <div className="software-badge">Full-cycle delivery</div>
+            <h2 className="software-title">Custom Software Programs</h2>
             <p className="software-description">
-              Our company develops software for business automation, internet projects, and startups.
+              We partner with founders and enterprises to launch digital products, automate operations, and scale cloud-native platforms.
             </p>
-            <ul className="software-features">
-              <li>Development of unique solutions</li>
-              <li>Strict quality control</li>
-              <li>Development of highload systems</li>
+            <p className="software-description">
+              Engage us for end-to-end builds, from discovery and UX through delivery, handover, and ongoing success metrics.
+            </p>
+            <ul className="software-bullets">
+              <li>Product discovery, UI/UX, and backlog shaping to validate value fast.</li>
+              <li>Cross-functional squads covering architecture, frontend, backend, and QA.</li>
+              <li>SRE, performance, and analytics setups that keep releases reliable.</li>
             </ul>
-            <a href="#contact" className="software-btn">Learn More</a>
+            <div className="software-metrics">
+              <div className="software-metric">
+                <span className="software-metric-value">20+</span>
+                <span className="software-metric-label">Projects launched</span>
+              </div>
+              <div className="software-metric">
+                <span className="software-metric-value">6 mo</span>
+                <span className="software-metric-label">Average partnership</span>
+              </div>
+              <div className="software-metric">
+                <span className="software-metric-value">95%</span>
+                <span className="software-metric-label">Delivery confidence</span>
+              </div>
+            </div>
+            <a href="#contact" className="software-btn">Let’s build together</a>
           </div>
         </div>
       </section>
