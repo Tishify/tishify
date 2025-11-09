@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import './ChatbotDetails.css';
 
@@ -71,7 +71,27 @@ const BOT_PORTFOLIO = [
   },
 ];
 
+const CONTACT_OPTIONS = [
+  {
+    label: 'Telegram',
+    description: 'Chat with us instantly via Telegram.',
+    href: 'https://t.me/tishify',
+  },
+  {
+    label: 'Instagram',
+    description: 'Reach out on Instagram to explore our work.',
+    href: 'https://www.instagram.com/tishify.eu',
+  },
+  {
+    label: 'Email',
+    description: 'Send a detailed brief and we’ll reply promptly.',
+    href: 'mailto:company@tishify.online',
+  },
+];
+
 function ChatbotDetails() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
   return (
     <main className="chatbot-details">
       <section className="chatbot-details__hero">
@@ -176,10 +196,43 @@ function ChatbotDetails() {
         <p>
           Tell us about your goals and we’ll outline the roadmap, integrations, and success metrics to get started.
         </p>
-        <a className="chatbot-details__cta-button" href="mailto:company@tishify.online">
+        <button
+          type="button"
+          className="chatbot-details__cta-button"
+          onClick={() => setIsModalOpen(true)}
+        >
           Schedule a discovery call
-        </a>
+        </button>
       </section>
+
+      {isModalOpen && (
+        <div className="chatbot-details__modal-overlay" role="dialog" aria-modal="true">
+          <div className="chatbot-details__modal">
+            <button
+              type="button"
+              className="chatbot-details__modal-close"
+              onClick={() => setIsModalOpen(false)}
+              aria-label="Close contact options"
+            >
+              ×
+            </button>
+            <h3>Choose your preferred channel</h3>
+            <p className="chatbot-details__modal-subtitle">
+              Pick the platform that works best for you and we’ll meet you there.
+            </p>
+            <ul className="chatbot-details__modal-list">
+              {CONTACT_OPTIONS.map(option => (
+                <li key={option.label}>
+                  <a className="chatbot-details__modal-link" href={option.href} target="_blank" rel="noopener noreferrer">
+                    <span className="chatbot-details__modal-link-title">{option.label}</span>
+                    <span className="chatbot-details__modal-link-description">{option.description}</span>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      )}
     </main>
   );
 }
