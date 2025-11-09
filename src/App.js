@@ -1,18 +1,10 @@
 import React, { useEffect, useState } from 'react';
+import { Routes, Route, Link } from 'react-router-dom';
 import './App.css';
+import ChatbotDetails from './pages/ChatbotDetails';
 
-function App() {
-  const [parallax, setParallax] = useState(0);
+function LandingPage() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollY = window.scrollY;
-      setParallax(scrollY);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -20,7 +12,7 @@ function App() {
     } else {
       document.body.style.overflow = 'unset';
     }
-    
+
     return () => {
       document.body.style.overflow = 'unset';
     };
@@ -33,15 +25,13 @@ function App() {
   const scrollToSection = (sectionId) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ 
+      element.scrollIntoView({
         behavior: 'smooth',
         block: 'start'
       });
     }
     closeMenu();
   };
-
-
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -51,7 +41,7 @@ function App() {
     <div className="landing-root">
       {/* Blur Overlay */}
       <div className={`blur-overlay ${isMenuOpen ? 'active' : ''}`}></div>
-      
+
       {/* Header */}
       <header className="header">
         <div className="header-content">
@@ -59,7 +49,7 @@ function App() {
             <span className="logo-line">TISHIFY</span>
             <span className="logo-line">DIGITAL SIMPLIFICATION</span>
           </div>
-          
+
           {/* Desktop Navigation */}
           <nav className="nav desktop-nav">
             <a href="#services" className="nav-link" onClick={() => scrollToSection('services')}>SERVICES</a>
@@ -72,7 +62,7 @@ function App() {
 
           <div className="header-right">
             <div className="phone desktop-phone">@tishify</div>
-            
+
             {/* Mobile Menu Button */}
             <button className="mobile-menu-btn" onClick={toggleMenu} aria-label="Toggle menu">
               <span className={`hamburger-line ${isMenuOpen ? 'open' : ''}`}></span>
@@ -96,15 +86,13 @@ function App() {
         </nav>
       </header>
 
-     
-
       {/* Interactive Spline Section */}
       <section className="spline-section">
         <div className="spline-container">
-          <iframe 
-            src='https://my.spline.design/r4xbot-fJUhSRudBOZaQT2M86N5BFNj/' 
-            frameBorder='0' 
-            width='100%' 
+          <iframe
+            src='https://my.spline.design/r4xbot-fJUhSRudBOZaQT2M86N5BFNj/'
+            frameBorder='0'
+            width='100%'
             height='100%'
             title="Tishify Interactive Design"
           ></iframe>
@@ -167,7 +155,13 @@ function App() {
             <p className="services-description">
               Developers of different purposes for Telegram
             </p>
-            <a href="#contact" className="services-btn">Learn More</a>
+            <Link
+              to="/chatbot-details"
+              className="services-btn"
+              onClick={closeMenu}
+            >
+              Learn More
+            </Link>
           </div>
         </div>
       </section>
@@ -339,6 +333,15 @@ function App() {
         </div>
       </div>
     </div>
+  );
+}
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<LandingPage />} />
+      <Route path="/chatbot-details" element={<ChatbotDetails />} />
+    </Routes>
   );
 }
 
