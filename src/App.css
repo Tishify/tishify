@@ -489,149 +489,224 @@
 
 .services-visual {
   position: relative;
-  height: 500px;
+  height: 520px;
   display: flex;
   justify-content: center;
   align-items: center;
+  perspective: 1200px;
+  transform-style: preserve-3d;
+  isolation: isolate;
+}
+
+.services-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.75;
+  animation: glowPulse 10s ease-in-out infinite;
+  pointer-events: none;
+}
+
+.services-glow--primary {
+  width: 440px;
+  height: 440px;
+  background: radial-gradient(circle at 30% 30%, rgba(74, 201, 121, 0.65), transparent 75%);
+}
+
+.services-glow--secondary {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle at 70% 70%, rgba(82, 95, 197, 0.4), transparent 80%);
+  animation-delay: -3s;
+}
+
+.services-orbit {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(74, 201, 121, 0.26);
+  box-shadow: 0 0 40px rgba(74, 201, 121, 0.18);
+  animation: orbitSpin 20s linear infinite;
+  pointer-events: none;
+}
+
+.services-orbit--outer {
+  width: 420px;
+  height: 420px;
+}
+
+.services-orbit--inner {
+  width: 280px;
+  height: 280px;
+  animation-duration: 26s;
+  animation-direction: reverse;
+  opacity: 0.65;
 }
 
 .phone-screens {
   position: relative;
-  height: 100%;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 360px;
+  height: 440px;
+  transform-style: preserve-3d;
 }
 
 .phone-screen {
   position: absolute;
-  width: 200px;
-  height: 350px;
-  background: #ffffff;
-  border-radius: 20px;
-  padding: 1rem;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  transform: rotate(-5deg);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #4ac979;
-  overflow: hidden;
-  cursor: pointer;
+  width: 210px;
+  height: 370px;
+  background: rgba(255, 255, 255, 0.96);
+  border-radius: 24px;
+  padding: 1.2rem;
+  border: 1px solid rgba(74, 201, 121, 0.3);
+  box-shadow: 0 18px 42px rgba(16, 55, 31, 0.18);
+  transform-style: preserve-3d;
+  backface-visibility: hidden;
+  --x: 0px;
+  --y: 0px;
+  --z: 0px;
+  --rx: 0deg;
+  --ry: 0deg;
+  --rz: 0deg;
+  transform: translate3d(var(--x), var(--y), var(--z)) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz));
+  animation: phoneFloat 9s ease-in-out infinite;
+  pointer-events: none;
 }
 
-.phone-screen:hover {
-  transform: rotate(-5deg) scale(1.05);
-  box-shadow: 0 15px 40px rgba(74, 201, 121, 0.2);
+.phone-screen::before {
+  content: '';
+  position: absolute;
+  inset: -12px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(74, 201, 121, 0.18), rgba(255, 255, 255, 0));
+  opacity: 0.35;
+  filter: blur(20px);
+  z-index: -1;
 }
 
 .screen-1 {
-  top: 0;
-  left: 0;
-  z-index: 3;
+  --x: -120px;
+  --y: -70px;
+  --z: 60px;
+  --rx: 14deg;
+  --ry: -18deg;
+  --rz: -8deg;
+  animation-duration: 8.6s;
 }
 
 .screen-2 {
-  top: 50px;
-  left: 50px;
-  z-index: 2;
-  transform: rotate(5deg);
-}
-
-.screen-2:hover {
-  transform: rotate(5deg) scale(1.05);
-  box-shadow: 0 15px 40px rgba(74, 201, 121, 0.2);
+  --x: -10px;
+  --y: -20px;
+  --z: -35px;
+  --rx: 10deg;
+  --ry: 12deg;
+  --rz: 4deg;
+  animation-duration: 9.8s;
+  animation-delay: -1.2s;
 }
 
 .screen-3 {
-  top: 100px;
-  left: 100px;
-  z-index: 1;
-  transform: rotate(-10deg);
-}
-
-.screen-3:hover {
-  transform: rotate(-10deg) scale(1.05);
-  box-shadow: 0 15px 40px rgba(74, 201, 121, 0.2);
-}
-
-.screen-content {
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.screen-content h4 {
-  color: #4ac979;
-  font-size: 0.9rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
-}
-
-.screen-content p {
-  color: #666;
-  font-size: 0.8rem;
-  margin-bottom: 0.5rem;
-  line-height: 1.3;
-}
-
-.screen-buttons {
-  display: flex;
-  flex-direction: column;
-  gap: 0.5rem;
-  margin-top: auto;
-}
-
-.screen-btn {
-  background: #4ac979;
-  color: #ffffff;
-  border: none;
-  padding: 0.5rem 1rem;
-  border-radius: 0.5rem;
-  font-size: 0.7rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: background 0.2s, transform 0.2s;
-  min-height: 32px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.screen-btn:hover {
-  background: #2e8c5a;
-  transform: scale(1.02);
-}
-
-.screen-btn:active {
-  transform: scale(0.98);
+  --x: 110px;
+  --y: 60px;
+  --z: 45px;
+  --rx: -12deg;
+  --ry: 16deg;
+  --rz: 10deg;
+  animation-duration: 10.6s;
+  animation-delay: -2.3s;
 }
 
 .animated-dots {
   position: absolute;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  gap: 8px;
-}
-
-.dot {
-  width: 8px;
-  height: 8px;
-  background: #4ac979;
+  width: 320px;
+  height: 320px;
   border-radius: 50%;
-  animation: dotPulse 2s infinite;
+  animation: orbitSpin 24s linear infinite;
+  pointer-events: none;
+  mix-blend-mode: screen;
 }
 
-.dot-1 { animation-delay: 0s; }
-.dot-2 { animation-delay: 0.4s; }
-.dot-3 { animation-delay: 0.8s; }
-.dot-4 { animation-delay: 1.2s; }
-.dot-5 { animation-delay: 1.6s; }
+.animated-dots .dot {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #4ac979;
+  box-shadow: 0 0 18px rgba(74, 201, 121, 0.8);
+  transform-origin: center;
+  animation: dotGlow 2.2s ease-in-out infinite;
+}
 
-@keyframes dotPulse {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.2); }
+.animated-dots .dot:nth-child(1) {
+  transform: rotate(0deg) translateX(150px);
+  animation-delay: 0s;
+}
+
+.animated-dots .dot:nth-child(2) {
+  transform: rotate(72deg) translateX(150px);
+  animation-delay: 0.3s;
+}
+
+.animated-dots .dot:nth-child(3) {
+  transform: rotate(144deg) translateX(150px);
+  animation-delay: 0.6s;
+}
+
+.animated-dots .dot:nth-child(4) {
+  transform: rotate(216deg) translateX(150px);
+  animation-delay: 0.9s;
+}
+
+.animated-dots .dot:nth-child(5) {
+  transform: rotate(288deg) translateX(150px);
+  animation-delay: 1.2s;
+}
+
+@keyframes phoneFloat {
+  0% {
+    transform: translate3d(var(--x), var(--y), var(--z)) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz));
+    box-shadow: 0 18px 42px rgba(16, 55, 31, 0.18);
+  }
+  50% {
+    transform: translate3d(calc(var(--x) + 14px), calc(var(--y) - 18px), calc(var(--z) + 24px))
+      rotateX(calc(var(--rx) - 3deg)) rotateY(calc(var(--ry) + 5deg)) rotateZ(calc(var(--rz) + 3deg));
+    box-shadow: 0 28px 58px rgba(16, 55, 31, 0.24);
+  }
+  100% {
+    transform: translate3d(var(--x), var(--y), var(--z)) rotateX(var(--rx)) rotateY(var(--ry)) rotateZ(var(--rz));
+    box-shadow: 0 18px 42px rgba(16, 55, 31, 0.18);
+  }
+}
+
+@keyframes orbitSpin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    transform: scale(0.92);
+    opacity: 0.55;
+  }
+  50% {
+    transform: scale(1.06);
+    opacity: 0.9;
+  }
+}
+
+@keyframes dotGlow {
+  0%, 100% {
+    opacity: 0.55;
+    box-shadow: 0 0 14px rgba(74, 201, 121, 0.6);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 22px rgba(74, 201, 121, 0.9);
+  }
 }
 
 .services-right {
@@ -1673,38 +1748,58 @@
   }
 
   .services-visual {
-    height: 350px;
+    height: 380px;
     margin-bottom: 1rem;
   }
 
+  .services-glow--primary {
+    width: 340px;
+    height: 340px;
+  }
+
+  .services-glow--secondary {
+    width: 240px;
+    height: 240px;
+  }
+
+  .services-orbit--outer {
+    width: 320px;
+    height: 320px;
+  }
+
+  .services-orbit--inner {
+    width: 220px;
+    height: 220px;
+  }
+
   .phone-screens {
-    height: 100%;
-    position: relative;
+    width: 280px;
+    height: 340px;
   }
 
   .phone-screen {
-    width: 140px;
-    height: 240px;
-    font-size: 0.7rem;
-    padding: 0.75rem;
+    width: 150px;
+    height: 260px;
+    font-size: 0.75rem;
+    padding: 0.8rem;
   }
 
   .screen-1 {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(-5deg);
+    --x: -90px;
+    --y: -60px;
+    --z: 40px;
   }
 
   .screen-2 {
-    top: 30px;
-    left: 50%;
-    transform: translateX(-50%) rotate(5deg);
+    --x: 0px;
+    --y: -20px;
+    --z: -20px;
   }
 
   .screen-3 {
-    top: 60px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-10deg);
+    --x: 90px;
+    --y: 40px;
+    --z: 30px;
   }
 
   .screen-content h4 {
@@ -1721,6 +1816,16 @@
     padding: 0.4rem 0.8rem;
     font-size: 0.6rem;
     min-height: 28px;
+  }
+
+  .animated-dots {
+    width: 240px;
+    height: 240px;
+  }
+
+  .animated-dots .dot {
+    width: 10px;
+    height: 10px;
   }
 
   .services-title {
@@ -1749,148 +1854,135 @@
   }
 
   .services-visual {
-    height: 300px;
+    height: 320px;
+  }
+
+  .services-glow--primary {
+    width: 280px;
+    height: 280px;
+  }
+
+  .services-glow--secondary {
+    width: 200px;
+    height: 200px;
+  }
+
+  .services-orbit--outer {
+    width: 260px;
+    height: 260px;
+  }
+
+  .services-orbit--inner {
+    width: 190px;
+    height: 190px;
   }
 
   .phone-screens {
-    height: 100%;
+    width: 240px;
+    height: 300px;
   }
 
   .phone-screen {
-    width: 120px;
-    height: 200px;
-    font-size: 0.6rem;
-    padding: 0.6rem;
-    border-radius: 15px;
+    width: 130px;
+    height: 220px;
+    font-size: 0.65rem;
+    padding: 0.65rem;
+    border-radius: 18px;
   }
 
   .screen-1 {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(-3deg);
+    --x: -70px;
+    --y: -50px;
+    --z: 30px;
   }
 
   .screen-2 {
-    top: 25px;
-    left: 50%;
-    transform: translateX(-50%) rotate(3deg);
+    --x: 0px;
+    --y: -12px;
+    --z: -15px;
   }
 
   .screen-3 {
-    top: 50px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-6deg);
-  }
-
-  .screen-content h4 {
-    font-size: 0.7rem;
-    margin-bottom: 0.3rem;
-  }
-
-  .screen-content p {
-    font-size: 0.6rem;
-    margin-bottom: 0.3rem;
-    line-height: 1.2;
-  }
-
-  .screen-buttons {
-    gap: 0.3rem;
-  }
-
-  .screen-btn {
-    padding: 0.3rem 0.6rem;
-    font-size: 0.5rem;
-    min-height: 24px;
-    border-radius: 0.3rem;
-  }
-
-  .services-title {
-    font-size: 1.8rem;
-    margin-bottom: 1rem;
-  }
-
-  .services-description {
-    font-size: 0.95rem;
-    margin-bottom: 0.8rem;
-  }
-
-  .services-btn {
-    padding: 0.8rem 1.5rem;
-    font-size: 1rem;
-    min-height: 40px;
+    --x: 70px;
+    --y: 32px;
+    --z: 24px;
   }
 
   .animated-dots {
-    bottom: 10px;
-    right: 10px;
-    gap: 6px;
+    width: 200px;
+    height: 200px;
   }
 
-  .dot {
-    width: 6px;
-    height: 6px;
+  .animated-dots .dot {
+    width: 8px;
+    height: 8px;
   }
 }
 
 @media (max-width: 400px) {
   .services-visual {
-    height: 250px;
+    height: 260px;
+  }
+
+  .services-glow--primary {
+    width: 220px;
+    height: 220px;
+  }
+
+  .services-glow--secondary {
+    width: 160px;
+    height: 160px;
+  }
+
+  .services-orbit--outer {
+    width: 220px;
+    height: 220px;
+  }
+
+  .services-orbit--inner {
+    width: 160px;
+    height: 160px;
+  }
+
+  .phone-screens {
+    width: 200px;
+    height: 240px;
   }
 
   .phone-screen {
-    width: 100px;
-    height: 180px;
-    font-size: 0.5rem;
-    padding: 0.5rem;
-    border-radius: 12px;
+    width: 110px;
+    height: 190px;
+    font-size: 0.58rem;
+    padding: 0.55rem;
+    border-radius: 14px;
   }
 
   .screen-1 {
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%) rotate(-2deg);
+    --x: -50px;
+    --y: -40px;
+    --z: 20px;
   }
 
   .screen-2 {
-    top: 20px;
-    left: 50%;
-    transform: translateX(-50%) rotate(2deg);
+    --x: 0px;
+    --y: -8px;
+    --z: -10px;
   }
 
   .screen-3 {
-    top: 40px;
-    left: 50%;
-    transform: translateX(-50%) rotate(-4deg);
+    --x: 50px;
+    --y: 26px;
+    --z: 16px;
   }
 
-  .screen-content h4 {
-    font-size: 0.6rem;
-    margin-bottom: 0.2rem;
+  .animated-dots {
+    width: 170px;
+    height: 170px;
   }
 
-  .screen-content p {
-    font-size: 0.5rem;
-    margin-bottom: 0.2rem;
-  }
-
-  .screen-btn {
-    padding: 0.2rem 0.5rem;
-    font-size: 0.4rem;
-    min-height: 20px;
-  }
-
-  .services-title {
-    font-size: 1.6rem;
-  }
-
-  .services-description {
-    font-size: 0.9rem;
-  }
-
-  .services-btn {
-    padding: 0.7rem 1.2rem;
-    font-size: 0.9rem;
-    min-height: 36px;
+  .animated-dots .dot {
+    width: 6px;
+    height: 6px;
   }
 }
 
@@ -1967,4 +2059,93 @@
   .spline-section {
     height: 70vh;
   }
+}
+
+.services-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.5rem 1rem;
+  border-radius: 999px;
+  background: rgba(74, 201, 121, 0.14);
+  border: 1px solid rgba(74, 201, 121, 0.3);
+  color: #2e8c5a;
+  font-weight: 600;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+}
+
+.services-badge::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4ac979;
+  box-shadow: 0 0 0 4px rgba(74, 201, 121, 0.2);
+}
+
+.services-pill-list {
+  list-style: none;
+  padding: 0;
+  margin: 1.5rem 0 2rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.services-pill {
+  background: linear-gradient(120deg, rgba(74, 201, 121, 0.14), rgba(74, 201, 121, 0.02));
+  border: 1px solid rgba(74, 201, 121, 0.22);
+  border-radius: 18px;
+  padding: 1.1rem 1.25rem;
+  box-shadow: 0 14px 34px rgba(74, 201, 121, 0.14);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.services-pill:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 24px 50px rgba(74, 201, 121, 0.2);
+}
+
+.services-pill-title {
+  display: block;
+  font-weight: 600;
+  color: #215638;
+  margin-bottom: 0.35rem;
+}
+
+.services-pill-copy {
+  display: block;
+  color: #46615b;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.services-metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.services-metric {
+  background: #f4fbf7;
+  border: 1px solid rgba(74, 201, 121, 0.18);
+  border-radius: 16px;
+  padding: 1rem 1.4rem;
+  box-shadow: 0 12px 28px rgba(74, 201, 121, 0.12);
+  min-width: 140px;
+}
+
+.services-metric-value {
+  display: block;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #10371f;
+}
+
+.services-metric-label {
+  display: block;
+  font-size: 0.9rem;
+  color: #46615b;
+  margin-top: 0.25rem;
 }

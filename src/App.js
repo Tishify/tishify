@@ -104,6 +104,10 @@ function LandingPage() {
         <div className="services-content">
           <div className="services-left">
             <div className="services-visual">
+              <div className="services-glow services-glow--primary"></div>
+              <div className="services-glow services-glow--secondary"></div>
+              <div className="services-orbit services-orbit--outer"></div>
+              <div className="services-orbit services-orbit--inner"></div>
               <div className="phone-screens">
                 <div className="phone-screen screen-1">
                   <div className="screen-content">
@@ -148,19 +152,52 @@ function LandingPage() {
             </div>
           </div>
           <div className="services-right">
-            <h2 className="services-title">Chat Bot Development</h2>
+            <div className="services-badge">Telegram-first automations</div>
+            <h2 className="services-title">Chatbot Automation Studio</h2>
             <p className="services-description">
-              We improve brand communication in messengers for clients.
+              We design conversational assistants that plug into your customer journeys, CRMs, and ops tools to remove manual follow-ups and keep teams in sync.
             </p>
             <p className="services-description">
-              Developers of different purposes for Telegram
+              From ecommerce support to recruiting and uptime monitoring, our bots are battle-tested across fast-moving sales, HR, and operations teams.
             </p>
+            <ul className="services-pill-list">
+              <li className="services-pill">
+                <span className="services-pill-title">Commerce Command Hub</span>
+                <span className="services-pill-copy">Synchronizes storefront tasks, order updates, and manager alerts in real time.</span>
+              </li>
+              <li className="services-pill">
+                <span className="services-pill-title">Candidate Care Autopilot</span>
+                <span className="services-pill-copy">Keeps recruiting pipelines warm with intelligent vacancy and weekend responses.</span>
+              </li>
+              <li className="services-pill">
+                <span className="services-pill-title">SecureSpeak & ShiftSync</span>
+                <span className="services-pill-copy">Moderates communities, orchestrates schedules, and keeps operations humming 24/7.</span>
+              </li>
+              <li className="services-pill">
+                <span className="services-pill-title">SaaS Stability Watchtower</span>
+                <span className="services-pill-copy">Watches over mission-critical services and triggers rapid incident response.</span>
+              </li>
+            </ul>
+            <div className="services-metrics">
+              <div className="services-metric">
+                <span className="services-metric-value">24/7</span>
+                <span className="services-metric-label">Automated coverage</span>
+              </div>
+              <div className="services-metric">
+                <span className="services-metric-value">5+</span>
+                <span className="services-metric-label">Ready-to-launch suites</span>
+              </div>
+              <div className="services-metric">
+                <span className="services-metric-value">2x</span>
+                <span className="services-metric-label">Faster response cycles</span>
+              </div>
+            </div>
             <Link
               to="/chatbot-details"
               className="services-btn"
               onClick={closeMenu}
             >
-              Learn More
+              Explore our bots
             </Link>
           </div>
         </div>
