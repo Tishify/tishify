@@ -245,27 +245,63 @@ function LandingPage() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* About & Services Section */}
       <section className="section about-section" id="about">
-        <div className="section-content">
-          <h2>About Us</h2>
-          <p>
-            Tishify is dedicated to making technology simple and accessible. Our mission is to help businesses streamline their digital presence, automate processes, and focus on what matters most: growth.
-          </p>
-        </div>
-      </section>
-
-      {/* Services Section */}
-      <section className="section services-section">
-        <div className="section-content">
-          <h2>Our Services</h2>
-          <ul className="services-list">
-            <li>Custom Web & Mobile Development</li>
-            <li>Business Process Automation</li>
-            <li>UI/UX Design & Branding</li>
-            <li>Cloud Solutions & Integrations</li>
-            <li>Consulting & Support</li>
-          </ul>
+        <div className="section-content about-block">
+          <div className="about-intro">
+            <div className="about-badge">Who we are</div>
+            <h2>About Us</h2>
+            <p>
+              Tishify is dedicated to making technology simple and accessible. Our mission is to help businesses streamline their digital presence, automate processes, and focus on what matters most: growth.
+            </p>
+          </div>
+          <div className="about-details">
+            <div className="about-cards">
+              <article className="about-card">
+                <h3>01 — Product Strategy</h3>
+                <p>
+                  We align teams around achievable roadmaps, validate assumptions quickly, and translate ideas into focused delivery backlogs.
+                </p>
+              </article>
+              <article className="about-card">
+                <h3>02 — Engineering Culture</h3>
+                <p>
+                  Cross-functional squads ship modern web and mobile apps with CI/CD, automated testing, and scalable cloud infrastructure.
+                </p>
+              </article>
+              <article className="about-card">
+                <h3>03 — Continuous Partnerships</h3>
+                <p>
+                  We stay embedded after launch: tracking metrics, iterating on features, and supporting long-term client success.
+                </p>
+              </article>
+            </div>
+            <div className="about-services">
+              <h3>Our Services</h3>
+              <ul className="about-services-list">
+                <li>
+                  <span className="about-services-index">01</span>
+                  <span className="about-services-text">Custom Web &amp; Mobile Development</span>
+                </li>
+                <li>
+                  <span className="about-services-index">02</span>
+                  <span className="about-services-text">Business Process Automation</span>
+                </li>
+                <li>
+                  <span className="about-services-index">03</span>
+                  <span className="about-services-text">UI/UX Design &amp; Branding</span>
+                </li>
+                <li>
+                  <span className="about-services-index">04</span>
+                  <span className="about-services-text">Cloud Solutions &amp; Integrations</span>
+                </li>
+                <li>
+                  <span className="about-services-index">05</span>
+                  <span className="about-services-text">Consulting &amp; Support</span>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
       </section>
 
